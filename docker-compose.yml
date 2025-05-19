@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # שירות Flask
+  web:
+    build:
+      context: ./app-web
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+      - DB_HOST=db
+      - DB_USER=webapp_user
+      - DB_PASSWORD=secure_password
+      - DB_NAME=webapp_db
+      - SECRET_KEY=my_secret_key_change_this_in_production
+    depends_on:
+      - db
+    restart: always
+    networks:
+      - webapp-network
+
+  # שירות MySQL
+  db:
+    build:
+      context: ./db-web
+      dockerfile: Dockerfile
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=webapp_db
+      - MYSQL_USER=webapp_user
+      - MYSQL_PASSWORD=secure_password
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    networks:
+      - webapp-network
+
+# הגדרת נפחים קבועים
+volumes:
+  mysql-data:
+
+# הגדרת רשתות
+networks:
+  webapp-network:
+    driver: bridge
