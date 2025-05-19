@@ -1,77 +1,126 @@
-Flask MySQL Docker Application
-אפליקציית ווב המבוססת על Flask ו-MySQL, עם קונטיינרים Docker לסביבת עבודה אחידה.
+Of course! Here's the English version of your project description:
 
-תיאור הפרויקט
-פרויקט זה מציג אפליקציית Flask פשוטה שמתחברת למסד נתונים MySQL ומאפשרת:
+---
 
-הזנת נתונים דרך טופס פשוט
-שמירת הנתונים במסד הנתונים
-צפייה בכל הנתונים שהוזנו
-כל הפרויקט ארוז באמצעות Docker ו-Docker Compose, כך שהוא קל להתקנה ולהפעלה בכל סביבה.
+# Flask MySQL Docker Application
 
-טכנולוגיות
-Backend: Python, Flask
-Database: MySQL
-Frontend: HTML, CSS, JavaScript
-Containerization: Docker, Docker Compose
-מבנה הפרויקט
+**A web application based on Flask and MySQL, with Docker containers for a unified working environment.**
+
+---
+
+## Project Description
+
+This project presents a simple Flask application that connects to a MySQL database and enables:
+
+* Data input through a basic form
+* Saving the data to the database
+* Viewing all submitted data
+
+The entire project is packaged using Docker and Docker Compose, making it easy to install and run in any environment.
+
+---
+
+## Technologies
+
+* **Backend**: Python, Flask
+* **Database**: MySQL
+* **Frontend**: HTML, CSS, JavaScript
+* **Containerization**: Docker, Docker Compose
+
+---
+
+## Project Structure
+
+```
 .
-├── app.py                     # קובץ Flask הראשי
-├── docker-compose.yml         # קובץ הגדרות Docker Compose
-├── requirements.txt           # ספריות Python הנדרשות
-├── .env                       # קובץ משתני סביבה (לא כלול בגיט)
-├── .gitignore                 # קובץ התעלמות מקבצים בגיט
+├── app.py                     # Main Flask application file
+├── docker-compose.yml         # Docker Compose configuration file
+├── requirements.txt           # Required Python libraries
+├── .env                       # Environment variables file (excluded from Git)
+├── .gitignore                 # Git ignore file
 │
 ├── WEB-APP/
 │   ├── TEMPLATES/
-│   │   ├── index.html         # טופס הכנסת נתונים
-│   │   └── view_data.html     # עמוד הצגת נתונים
+│   │   ├── index.html         # Data input form
+│   │   └── view_data.html     # Data display page
 │   ├── static/
 │   │   ├── css/
 │   │   │   └── style.css
 │   │   └── js/
 │   │       └── script.js
-│   └── Dockerfile             # קובץ Docker לאפליקציה
+│   └── Dockerfile             # Dockerfile for the application
 │
 └── DB-WEB/
-    ├── Dockerfile             # קובץ Docker למסד הנתונים
-    └── init.sql               # קובץ אתחול מסד הנתונים
-התקנה והפעלה
-דרישות מקדימות
-Docker
-Docker Compose
-Git
-צעדים להתקנה
-שכפל את המאגר:
-bash
+    ├── Dockerfile             # Dockerfile for the database
+    └── init.sql               # Database initialization script
+```
+
+---
+
+## Installation & Running
+
+### Prerequisites
+
+* Docker
+* Docker Compose
+* Git
+
+### Steps to Install
+
+Clone the repository:
+
+```bash
 git clone https://github.com/YOUR_USERNAME/flask-mysql-docker-app.git
 cd flask-mysql-docker-app
-הפעל את השירותים:
-bash
+```
+
+Start the services:
+
+```bash
 docker-compose up --build
-גישה לאפליקציה:
-פתח דפדפן בכתובת: http://localhost:5000
-הערות
-הנתונים של MySQL נשמרים ב-Docker volume, כך שהם יישמרו גם אם תכבה את הקונטיינרים
-אפליקציית הווב תתחדש אוטומטית בזמן פיתוח כשתעשה שינויים בקוד
-תרומה לפרויקט
-אנו מקבלים בברכה תרומות ושיפורים! אנא פעל לפי השלבים הבאים:
+```
 
-צור Fork של המאגר
-צור ענף (Branch) חדש:
-bash
-git checkout -b feature/your-feature-name
-בצע את השינויים שלך
-בדוק שהכל עובד כראוי
-דחוף את השינויים לענף שלך:
-bash
-git push origin feature/your-feature-name
-פתח Pull Request בגיטהאב
-הערה: כל Pull Request ייבדק ויאושר על ידי מנהלי הפרויקט לפני שילוב במאגר הראשי.
+### Access the Application
 
-רישיון
-פרויקט זה מופץ תחת רישיון MIT. ראה קובץ LICENSE לפרטים נוספים.
+Open a browser at:
+**[http://localhost:5000](http://localhost:5000)**
 
-יצירת קשר
-אם יש לך שאלות או הצעות, אנא צור קשר דרך Issues בגיטהאב.
+---
 
+## Notes
+
+* MySQL data is stored in a Docker volume, so it persists even if the containers are stopped.
+* The web app will auto-reload during development when code changes are made.
+
+---
+
+## Contributing
+
+We welcome contributions and improvements! Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Make your changes
+4. Ensure everything works correctly
+5. Push your changes to your branch:
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+6. Open a Pull Request on GitHub
+
+**Note**: All Pull Requests will be reviewed and approved by the project maintainers before merging into the main repository.
+
+
+
+---
+
+## Contact
+
+If you have any questions or suggestions, please open an issue on GitHub.
+
+---
