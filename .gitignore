@@ -2,7 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.bin
+package-lock
+node_modules
 # C extensions
 *.so
 
