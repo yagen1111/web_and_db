@@ -1,0 +1,125 @@
+{
+  "appenders": {
+    "console": {
+      "type": "console",
+      "layout": {
+        "type": "pattern",
+        "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} [%p] %c - %m"
+      }
+    },
+    "app": {
+      "type": "dateFile",
+      "filename": "logs/app.log",
+      "pattern": "yyyy-MM-dd",
+      "alwaysIncludePattern": true,
+      "compress": true,
+      "keepFileExt": true,
+      "maxLogSize": 10485760,
+      "backups": 30,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} [%p] %c - %m"
+      }
+    },
+    "access": {
+      "type": "dateFile",
+      "filename": "logs/access.log",
+      "pattern": "yyyy-MM-dd",
+      "alwaysIncludePattern": true,
+      "compress": true,
+      "keepFileExt": true,
+      "maxLogSize": 10485760,
+      "backups": 30,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} [%p] ACCESS - %m"
+      }
+    },
+    "kafka": {
+      "type": "dateFile",
+      "filename": "logs/kafka.log",
+      "pattern": "yyyy-MM-dd",
+      "alwaysIncludePattern": true,
+      "compress": true,
+      "keepFileExt": true,
+      "maxLogSize": 10485760,
+      "backups": 30,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} [%p] KAFKA - %m"
+      }
+    },
+    "database": {
+      "type": "dateFile",
+      "filename": "logs/database.log",
+      "pattern": "yyyy-MM-dd",
+      "alwaysIncludePattern": true,
+      "compress": true,
+      "keepFileExt": true,
+      "maxLogSize": 10485760,
+      "backups": 30,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} [%p] DB - %m"
+      }
+    },
+    "error": {
+      "type": "dateFile",
+      "filename": "logs/error.log",
+      "pattern": "yyyy-MM-dd",
+      "alwaysIncludePattern": true,
+      "compress": true,
+      "keepFileExt": true,
+      "maxLogSize": 10485760,
+      "backups": 30,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} [%p] ERROR - %m"
+      }
+    },
+    "security": {
+      "type": "dateFile",
+      "filename": "logs/security.log",
+      "pattern": "yyyy-MM-dd",
+      "alwaysIncludePattern": true,
+      "compress": true,
+      "keepFileExt": true,
+      "maxLogSize": 10485760,
+      "backups": 30,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} [%p] SECURITY - %m"
+      }
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": ["console", "app"],
+      "level": "info"
+    },
+    "app": {
+      "appenders": ["console", "app"],
+      "level": "info"
+    },
+    "access": {
+      "appenders": ["console", "access"],
+      "level": "info"
+    },
+    "kafka": {
+      "appenders": ["console", "kafka"],
+      "level": "info"
+    },
+    "database": {
+      "appenders": ["console", "database"],
+      "level": "info"
+    },
+    "error": {
+      "appenders": ["console", "error", "app"],
+      "level": "error"
+    },
+    "security": {
+      "appenders": ["console", "security", "app"],
+      "level": "warn"
+    }
+  }
+}
